@@ -56,7 +56,13 @@ Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
 
 const isCapitalized = (str) => {
-  // Solution code here...
+
+  var y = str.match(/([A-Z][a-z]*)/g);
+  console.log(y);
+  if (y === null) {
+    return [];
+  }
+  return y;
 };
 
 /* ------------------------------------------------------------------------------------------------
