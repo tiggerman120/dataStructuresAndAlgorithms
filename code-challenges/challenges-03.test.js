@@ -51,11 +51,14 @@ const alphabetize = (arr) => {
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 
-Write a function named sortByLength that takes in an array of strings and returns the same array, with the strings sorted by their length, lowest to highest.
+Write a function named sortByLength that takes in an array of strings and returns the same array, 
+with the strings sorted by their length, lowest to highest.
 ------------------------------------------------------------------------------------------------ */
 
 const sortByLength = (arr) => {
-  // Solution code here...
+  arr.sort(function(a,b){
+    return a - b;
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
