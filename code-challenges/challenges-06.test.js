@@ -69,11 +69,14 @@ let $ = createSnippetWithJQuery(`
 </script>
 `);
 
-
 const templatingWithMustache = () => {
-//   $.getJSON(characters).then(data => characters.html();
-// let template = $('#template').html();
-
+  const template = $('#template').html();
+  let box = [];
+  characters.forEach(entry => {
+    let html = Mustache.render(template, entry);
+    box.push(html);
+  });
+  return box;
 };
 
 /* ------------------------------------------------------------------------------------------------
