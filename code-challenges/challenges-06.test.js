@@ -70,7 +70,13 @@ let $ = createSnippetWithJQuery(`
 `);
 
 const templatingWithMustache = () => {
-  // Solution code here...
+  const template = $('#template').html();
+  let box = [];
+  characters.forEach(entry => {
+    let html = Mustache.render(template, entry);
+    box.push(html);
+  });
+  return box;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -86,7 +92,7 @@ const courseInfo = { name: 'Code 301', duration: { dayTrack: '4 weeks', eveningT
 };
 
 const getCourseKeys = (obj) => {
-  // Solution code here...
+  return Object.keys(obj);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -97,7 +103,9 @@ Write a function named getHouses that returns a new array containing the names o
 
 const getHouses = (arr) => {
   let houses = [];
-  // Solution code here...
+  arr.forEach(arr =>
+    houses.push(arr.house));
+
   return houses;
 };
 
@@ -114,8 +122,15 @@ hasChildrenValues(characters, 'Sansa') will return false
 ------------------------------------------------------------------------------------------------ */
 
 const hasChildrenValues = (arr, character) => {
-  // Solution code here...
-
+  let ans = false;
+  arr.forEach((element) => {
+    if (character === element.name) {
+      let kids = Object.values(element['children']);
+      if (kids.length > 0) {
+        ans = true;
+      }
+    }
+  }); return ans;
 };
 
 /* ------------------------------------------------------------------------------------------------
