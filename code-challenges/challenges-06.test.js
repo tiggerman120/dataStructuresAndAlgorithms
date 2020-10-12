@@ -69,8 +69,11 @@ let $ = createSnippetWithJQuery(`
 </script>
 `);
 
+
 const templatingWithMustache = () => {
-  // Solution code here...
+//   $.getJSON(characters).then(data => characters.html();
+// let template = $('#template').html();
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -97,6 +100,8 @@ Write a function named getHouses that returns a new array containing the names o
 
 const getHouses = (arr) => {
   let houses = [];
+  arr.forEach(arr =>
+    houses.push(arr.house));
   // Solution code here...
   return houses;
 };
