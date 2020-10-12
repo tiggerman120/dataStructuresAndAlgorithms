@@ -83,14 +83,14 @@ For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 ------------------------------------------------------------------------------------------------ */
 
 const wordsToCharList = (arr) => {
-//   var newArr = arr.substring(0, 1);
+  //   var newArr = arr.substring(0, 1);
   var newArr2 = [];
   for (let i = 0; i < arr.length; i++) {
     newArr2.push(arr[i]);
   }
-//   arr.forEach(letter => {
-//     newArr2.push(letter);
-//   });
+  //   arr.forEach(letter => {
+  //     newArr2.push(letter);
+  //   });
   return newArr2;
 };
 

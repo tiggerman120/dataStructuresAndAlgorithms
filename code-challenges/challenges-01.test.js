@@ -103,7 +103,23 @@ Return the resulting output array.
 ------------------------------------------------------------------------------------------------ */
 
 const fizzbuzz = (arr) => {
-  // Solution code here...
+  var temp = arr;
+  var array = [];
+  temp.forEach(item => {
+    if ((item % 3 === 0) && (item % 5 === 0)) {
+      array.push('Fizz Buzz');
+    }
+    else if (item % 5 === 0) {
+      array.push('Buzz');
+    }
+    else if (item % 3 === 0) {
+      array.push('Fizz');
+    }
+    else {
+      array.push(item);
+    }
+  });
+  return array;
 };
 
 /* ------------------------------------------------------------------------------------------------
