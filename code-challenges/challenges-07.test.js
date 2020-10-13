@@ -64,7 +64,9 @@ Write a function named mapTwoToThe that produces the same output as your forLoop
 ------------------------------------------------------------------------------------------------ */
 
 const mapTwoToThe = (arr) => {
-  // Solution code here...
+  let integers =[];
+  arr.map(twoToPowerOf => integers.push(Math.pow(2, twoToPowerOf)));
+  return integers;
 };
 
 /* ------------------------------------------------------------------------------------------------
