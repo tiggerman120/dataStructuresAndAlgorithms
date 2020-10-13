@@ -37,7 +37,12 @@ For example, twoToThe([1,2,3]) returns [2,4,8] because 2 ^ 1 = 2, 2 ^ 2 = 4, and
 ------------------------------------------------------------------------------------------------ */
 
 const forLoopTwoToThe = (arr) => {
-  // Solution code here...
+  let integers = [];
+  for (let i = 0; i < arr.length; i++) {
+    let x = Math.pow(2, arr[i]);
+    integers.push(x);
+  }
+  return integers;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -47,11 +52,8 @@ Write a function named forEachTwoToThe that produces the same output as your for
 ------------------------------------------------------------------------------------------------ */
 
 const forEachTwoToThe = (arr) => {
-  console.log(arr);
-  let integers = [];
-  arr.forEach(twoToPowerOf =>
-    integers.push(twoToPowerOf^2));
-
+  let integers =[];
+  arr.forEach(twoToPowerOf => integers.push(Math.pow(2, twoToPowerOf)));
   return integers;
 };
 
