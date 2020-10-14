@@ -38,10 +38,17 @@ For example, twoToThe([1,2,3]) returns [2,4,8] because 2 ^ 1 = 2, 2 ^ 2 = 4, and
 
 const forLoopTwoToThe = (arr) => {
   let integers = [];
-  for (let i = 0; i < arr.length; i++) {
-    let x = Math.pow(2, arr[i]);
-    integers.push(x);
+  // for (let num of arr) {//num is an index of the array so you can reference num directly
+  //   integers.push(Math.pow(2, num));//for each num of the array arr lets do mathpow method push result into integers array
+  // }
+  //this could be used to enumerate through objects using key/value pairs
+  for (let num in arr) {//num is an index in the array so you need to reference an index value
+    integers.push(Math.pow(2, arr[num]));
   }
+  // for (let i = 0; i < arr.length; i++) {
+  //   let x = Math.pow(2, arr[i]);
+  //   integers.push(x);
+  // }
   return integers;
 };
 
