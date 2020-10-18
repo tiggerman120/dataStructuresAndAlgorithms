@@ -209,7 +209,7 @@ const countNumberOfElements = (arr) => {
   let answer = arr.reduce((accumulator, currentvalue) => {
     accumulator = accumulator + 1;
     return accumulator;
-  },0)
+  },0);
   return answer;
 };
 
