@@ -46,10 +46,16 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 ------------------------------------------------------------------------------------------------ */
 
 const count = (target, input) => {
-  const sum = input.reduce(accumulator, currentValue) {
-    Math.add
-  }
-};
+  return input.reduce((accumulator, currentValue) => {
+    const count = currentValue.reduce((inLoopAcc, InLoopCV) => {
+      if (target === InLoopCV) {
+        return inLoopAcc + 1;
+      }
+      return inLoopAcc;
+    }, 0);
+    return accumulator + count;
+  }, 0);
+}
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -61,16 +67,16 @@ You may want to use filter, map, or reduce for this problem, but are not require
 For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 ------------------------------------------------------------------------------------------------ */
 
-const totalSum = (input) => {
-  input.map(arr => {
-    return arr[0];
-    .then(input.map(arr => {
+const totalSum = (input) => {}
+//   input.map(arr => {
+//     return arr[0];
+//     .then(input.map(arr => {
 
-    }))
-  }  input[1].map(arr => + input[2].map(arr => {
-    return arr
-  })));
-};
+//     }))
+//   }  input[1].map(arr => + input[2].map(arr => {
+//     return arr
+//   })));
+// };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
