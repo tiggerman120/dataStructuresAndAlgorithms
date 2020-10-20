@@ -55,7 +55,7 @@ const count = (target, input) => {
     }, 0);
     return accumulator + count;
   }, 0);
-}
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -67,16 +67,18 @@ You may want to use filter, map, or reduce for this problem, but are not require
 For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 ------------------------------------------------------------------------------------------------ */
 
-const totalSum = (input) => {}
-//   input.map(arr => {
-//     return arr[0];
-//     .then(input.map(arr => {
-
-//     }))
-//   }  input[1].map(arr => + input[2].map(arr => {
-//     return arr
-//   })));
-// };
+const totalSum = (input) => {
+  console.log(input);
+  let sums = input.reduce((accumulator, currentValue) => {//allowing you to interact with one inner array at a time step 1
+    let x = currentValue.reduce((accumulator2, currentValue2) => {//we reduce a singular inner array into a single sum step 2
+      accumulator2 += currentValue2;//this is the math logic (adding the values of each individual array) just logic
+      return accumulator2;//returns inner results to outer array step 4
+    }, 0);
+    return accumulator + x;//adds the sum of the inner array to the accumulator (adding the 3 results together) step 3
+  }, 0);
+  console.log(sums);
+  return sums;//returns the result of sums variable step 5
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
