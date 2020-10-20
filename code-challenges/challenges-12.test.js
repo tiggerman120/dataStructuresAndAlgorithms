@@ -9,15 +9,10 @@ using the 'reduce' method.
 E.g. [4,2,7,5,9,2] -> 9
 ------------------------------------------------------------------------------------------------ */
 const maxInArray = (arr) => {
-  // console.log(arr);
   let max = arr.reduce((accumulator, currentValue) => {
-    // console.log(currentValue);
     accumulator = Math.max(currentValue, accumulator);
-    // // console.log(currentValue);
-    console.log(accumulator);
     return accumulator;
   }, 0);
-  // console.log(x);
   return max;
 };
 
@@ -44,8 +39,14 @@ const alkiBeach = [33, 31, 147, 130, 27, 93, 38, 126, 141, 63, 46, 17];
 const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
 
 const grandTotal = (stores) => {
-  // Solution code here...
-
+  let totalSales = hoursOpen.map((hour, i) => {
+    // console.log(hour);
+    return stores.reduce((accumulator, currentValue) => {
+      accumulator += currentValue[i];
+      return accumulator;
+    }, 0);
+  });
+  return totalSales;
 };
 
 /* ------------------------------------------------------------------------------------------------
