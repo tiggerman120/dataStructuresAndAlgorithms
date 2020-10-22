@@ -20,7 +20,7 @@ const $ = createSnippetWithJQuery(`
 `);
 
 const fixTheTypo = () => {
-// Solution code here...
+$('#pear').replace('pear');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -61,7 +61,12 @@ For example, (123) 456-7890 returns 1234567890
 ------------------------------------------------------------------------------------------------ */
 
 const standardizePhoneNumbers = (arr) => {
-  // Solution code here...
+  console.log(arr[0].length);
+  let x = arr.forEach(y => {
+    y.slice(10, 11);
+  });
+  console.log(x.length);
+  return x;
 };
 
 /* ------------------------------------------------------------------------------------------------

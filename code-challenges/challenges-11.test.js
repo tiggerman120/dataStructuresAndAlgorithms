@@ -12,7 +12,6 @@ Note the space in between first and last names.
 You can assume that neither firstName nor lastName will be blank
 ------------------------------------------------------------------------------------------------ */
 const toLastNames = people => {
-  console.log(people);
   return people.map(x => `${x.firstName} ${x.lastName}`);
 
 };
@@ -26,7 +25,8 @@ If the PIN is four numerical digits long, return true. Otherwise, return false.
 ------------------------------------------------------------------------------------------------ */
 
 const validatePin = (pin) => {
-  // Solution code here...
+  console.log(pin);
+  return (/^(\d{4})$/).test(pin);
 };
 
 /* ------------------------------------------------------------------------------------------------
