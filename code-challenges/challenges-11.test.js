@@ -74,8 +74,9 @@ Return either true or false.
 
 const validatePhoneNumber = (phoneNumber) => {
   // console.log(phoneNumber);
-  return (/^\d{11}$/).test(phoneNumber);
-
+  // return (/^[(?]\d{3}[?) ]{2}\d{3}[- ]\d{4}/).test(phoneNumber);
+  return /^\({1}?[\d{3}^a-z][ )]{1}?[\d{3}^a-z][- ][\d{4}^a-z]$/;
+//i need to make this accept the ( )
 };
 
 /* ------------------------------------------------------------------------------------------------
