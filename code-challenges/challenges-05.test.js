@@ -138,17 +138,20 @@ const gruffaloCrumble = {
 const listFoods = (recipe) => {
   let result = [];
   // Solution code here...
+  // console.log(recipe.ingredients);
+  // let x = recipe.ingredients.sort(function(a, b) {
+  //   return a.length - b.length;
+  // });
   console.log(recipe.ingredients);
-  let x = recipe.ingredients.sort(function(a, b) {
-    return a.length - b.length;
-  });
-  console.log(x);
-  let y = x.forEach(string => {
-    let z = string.slice(2, 6);
-    console.log(z);
+  recipe.ingredients.forEach(ingredient => {
+    let b = ingredient.splice(0, 2);
+    console.log(b);
   });
   
-  result.push(y);
+  // let y = recipe.forEach(string => {
+  //   let z = string.slice(2, 6);
+  //   console.log(z);
+  // });
   return result;
 };
 
