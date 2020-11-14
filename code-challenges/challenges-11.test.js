@@ -47,8 +47,8 @@ Note: if you ever need to validate an email using a regex in practice, the Inter
 
 const validateEmail = (email) => {
   // console.log(email);
-  return (/^([a-z\d.-]+).@([a-z\d-]+)\.([a-z]{2,3})(\.[a-z]{2,3})?$/).test(email);
-
+  return (/^([a-z\d]+\S)?\w+@([a-z\d-]+)\.([a-z]{3})?$/).test(email);
+  //[a-z\d.-]+
 };
 
 /* ------------------------------------------------------------------------------------------------
