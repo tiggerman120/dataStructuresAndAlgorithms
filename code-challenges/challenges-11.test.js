@@ -74,10 +74,11 @@ Return either true or false.
 
 const validatePhoneNumber = (phoneNumber) => {
   // console.log(phoneNumber);
-  let regex = /^\D?(\d{3})(\d{4})$/;
+  // let regex = /(^\(?\d{3}\)?[\s-]?\d{3}[\s-]?\d{4}$/;
+  let regex = /(^(\d{3}|\(\d{3}\))\s?\-?\d{3}\-?\s?\d{4})$/;
   // /^[?()][\d\d\d^a-z][ )]{1}?[\d{3}^a-z][- ][\d{4}^a-z]$/;
   // let regex = /^\([\d{3}^a-z][ )]{1}?[\d{3}^a-z][- ][\d{4}^a-z]$/;
-  // return (/^[(?]\d{3}[?) ]{2}\d{3}[- ]\d{4}/).test(phoneNumber);
+  //return (/^[(?]\d{3}[?) ]{2}\d{3}[- ]\d{4}/).test(phoneNumber);
   return regex.test(phoneNumber);
 //i need to make this accept the ( )
 };
