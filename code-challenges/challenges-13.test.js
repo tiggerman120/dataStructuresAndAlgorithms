@@ -20,7 +20,7 @@ const $ = createSnippetWithJQuery(`
 `);
 
 const fixTheTypo = () => {
-// Solution code here...
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -32,7 +32,12 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['t', 
 ------------------------------------------------------------------------------------------------ */
 
 const firstLetters = (arr) => {
-  // Solution code here...
+  let box = []; //creating an empty array
+  arr.map(x => {//mapping over the array of strings(creates a new array)
+    var letter = x.slice(0, 1);//slicing off the first letter from each string inside of arr and putting it into x and assigning that to letter
+    box.push(letter);//pushing letter into box
+  });
+  return box;//returning the result inside of box to the user
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -45,6 +50,7 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['this
 
 const findHappiness = (arr) => {
   // Solution code here...
+  let regex = /
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -56,7 +62,11 @@ For example, (123) 456-7890 returns 1234567890
 ------------------------------------------------------------------------------------------------ */
 
 const standardizePhoneNumbers = (arr) => {
-  // Solution code here...
+  console.log(arr[0].length);
+  let x = arr.forEach(y => {
+    y.slice(10, 11);
+  });
+  return x;
 };
 
 /* ------------------------------------------------------------------------------------------------
