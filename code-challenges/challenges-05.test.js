@@ -91,6 +91,7 @@ const wordsToCharList = (arr) => {
   //   arr.forEach(letter => {
   //     newArr2.push(letter);
   //   });
+  console.log(newArr2);
   return newArr2;
 };
 
@@ -137,21 +138,14 @@ const gruffaloCrumble = {
 
 const listFoods = (recipe) => {
   let result = [];
-  // Solution code here...
-  // console.log(recipe.ingredients);
-  // let x = recipe.ingredients.sort(function(a, b) {
-  //   return a.length - b.length;
-  // });
-  console.log(recipe.ingredients);
   recipe.ingredients.forEach(ingredient => {
-    let b = ingredient.splice(0, 2);
-    console.log(b);
+    let index = ingredient.indexOf(' ');
+    let sliceUpToFirstSpace = ingredient.slice(index+1);//needs plus one so that it deletes the space and not just everything before it
+    let slicedIndex = sliceUpToFirstSpace.indexOf(' ');
+    let sliceSecondSpace = sliceUpToFirstSpace.slice(slicedIndex+1);
+    result.push(sliceSecondSpace);
+    return sliceSecondSpace;
   });
-  
-  // let y = recipe.forEach(string => {
-  //   let z = string.slice(2, 6);
-  //   console.log(z);
-  // });
   return result;
 };
 
