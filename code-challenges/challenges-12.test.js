@@ -89,7 +89,16 @@ const errands = [
 ];
 
 const howManyTreats = (arr) => {
-  // Solution code here...
+  console.log(arr);
+  let quantity = null;
+  arr.reduce((accumulator, currentValue) => {
+    console.log(currentValue);
+    console.log(currentValue.items[1].quantity);
+    accumulator = currentValue.items[1].quantity;
+    quantity = accumulator;
+    return quantity;
+  });
+  return quantity;
 };
 
 /* ------------------------------------------------------------------------------------------------
