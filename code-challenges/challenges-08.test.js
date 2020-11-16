@@ -9,8 +9,8 @@ Write a function named sayHello, that sends the message 'Hello from the back-end
 
 // Express sever here
 const createServer = () => {
-  const express=require('express');
-  const app=express();
+  const express = require('express');
+  const app = express();
   app.get('/hello', sayHello);
 
   var server = app.listen(3301, function () {
@@ -21,9 +21,9 @@ const createServer = () => {
 };
 
 
-function sayHello(request, response){
+function sayHello(request, response) {
   // Solution code here...
-  
+
   let words = 'Hello from the back-end';
   response.send(words);
 }
@@ -38,7 +38,7 @@ For example, oddValues([1,2,3]) returns [1,3].
 
 const oddValues = (arr) => {
   // Solution code here...
-  let odds = arr.filter(n => n%2);
+  let odds = arr.filter(n => n % 2);
   return odds;
 };
 
@@ -54,7 +54,15 @@ For example, filterStringsWithVowels('gregor','hound','xyz') returns ['gregor', 
 
 
 const filterStringsWithVowels = (arr) => {
-  // Solution code here...
+  let regex = /[aeiou]/gi;
+  let box = [];
+  arr.filter(vowel => {
+    if (vowel.match(regex)) {
+      console.log(vowel);
+      box.push(vowel);
+    }
+  });
+  return box;
 };
 
 
@@ -231,21 +239,21 @@ describe('Testing challenge 2', () => {
   test('It should return an array containing only odd integers', () => {
     expect(oddValues([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])).toStrictEqual([1, 3, 5, 7, 9]);
     expect(oddValues([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]).length).toStrictEqual(5);
-    expect(oddValues([2,3,4,179])).toStrictEqual([3,179]);
-    expect(oddValues([2,4,6,8])).toStrictEqual([]);
+    expect(oddValues([2, 3, 4, 179])).toStrictEqual([3, 179]);
+    expect(oddValues([2, 4, 6, 8])).toStrictEqual([]);
   });
 });
 
 describe('Testing challenge 3', () => {
   test('It should return an array containing only words that have vowels', () => {
-    expect(filterStringsWithVowels(['gregor','hound','xyz'])).toStrictEqual(['gregor', 'hound']);
-    expect(filterStringsWithVowels(['gregor','hound','xyz']).length).toStrictEqual(2);
+    expect(filterStringsWithVowels(['gregor', 'hound', 'xyz'])).toStrictEqual(['gregor', 'hound']);
+    expect(filterStringsWithVowels(['gregor', 'hound', 'xyz']).length).toStrictEqual(2);
     expect(filterStringsWithVowels(['a', 'b', 'cdefg'])).toStrictEqual(['a', 'cdefg']);
     expect(filterStringsWithVowels(['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', ''])).toStrictEqual(['a', 'e', 'i', 'o', 'u']);
   });
 
   test('It should not contain any words that do not contain vowels', () => {
-    expect(filterStringsWithVowels(['gregor','hound','xyz'])).not.toContain('xyz');
+    expect(filterStringsWithVowels(['gregor', 'hound', 'xyz'])).not.toContain('xyz');
   });
 });
 
@@ -268,25 +276,25 @@ describe('Testing challenge 4', () => {
 
   test('It should work with empty arrays', () => {
     expect(notInFirstArray([], [])).toStrictEqual([]);
-    expect(notInFirstArray([], [1,2,3,4,5])).toStrictEqual([1,2,3,4,5]);
-    expect(notInFirstArray([1,2,3,4,5], [])).toStrictEqual([]);
+    expect(notInFirstArray([], [1, 2, 3, 4, 5])).toStrictEqual([1, 2, 3, 4, 5]);
+    expect(notInFirstArray([1, 2, 3, 4, 5], [])).toStrictEqual([]);
   });
 });
 
 xdescribe('Testing challenge 5', () => {
   test('It should return an array containing the stats that are greater than the input', () => {
-    expect(getBaseStatGreaterThan(snorlaxData.stats, 75)).toStrictEqual([ { stat: { url: 'https://pokeapi.co/api/v2/stat/5/', name: 'special-defense' }, effort: 2, baseStat: 110 } ]);
+    expect(getBaseStatGreaterThan(snorlaxData.stats, 75)).toStrictEqual([{ stat: { url: 'https://pokeapi.co/api/v2/stat/5/', name: 'special-defense' }, effort: 2, baseStat: 110 }]);
     expect(getBaseStatGreaterThan(snorlaxData.stats, 75).length).toStrictEqual(1);
     expect(getBaseStatGreaterThan(snorlaxData.stats, 110)).toStrictEqual([]);
   });
   test('It should work for non-Snorlax data', () => {
-    expect(getBaseStatGreaterThan([{baseStat: 10}, {baseStat: -85}, {baseStat: 0}, {baseStat: -50}], -60)).toStrictEqual([{baseStat: 10}, {baseStat: 0}, {baseStat: -50}]);
+    expect(getBaseStatGreaterThan([{ baseStat: 10 }, { baseStat: -85 }, { baseStat: 0 }, { baseStat: -50 }], -60)).toStrictEqual([{ baseStat: 10 }, { baseStat: 0 }, { baseStat: -50 }]);
   });
 });
 
 xdescribe('Testing challenge 6', () => {
   test('It should return the name of the stats that exceed that maximum', () => {
-    expect(getStatName(snorlaxData.stats, 50)).toStrictEqual([ 'special-defense', 'special-attack' ]);
+    expect(getStatName(snorlaxData.stats, 50)).toStrictEqual(['special-defense', 'special-attack']);
     expect(getStatName(snorlaxData.stats, 50).length).toStrictEqual(2);
   });
 
@@ -297,17 +305,17 @@ xdescribe('Testing challenge 6', () => {
 
   test('It should work for non-snorlax data', () => {
     expect(getStatName([
-      {baseStat: 10, stat: {name: 'one'}},
-      {baseStat: -85, stat: {name: 'two'}},
-      {baseStat: 0, stat: {name: 'three'}},
-      {baseStat: -50, stat: {name: 'four'}}
+      { baseStat: 10, stat: { name: 'one' } },
+      { baseStat: -85, stat: { name: 'two' } },
+      { baseStat: 0, stat: { name: 'three' } },
+      { baseStat: -50, stat: { name: 'four' } }
     ], -60)).toStrictEqual(['one', 'three', 'four']);
   });
 });
 
 xdescribe('Testing challenge 7', () => {
   test('It should return an array containing characters who do not have children', () => {
-    expect(getCharactersWithoutChildren(characters)).toStrictEqual([ { name: 'Sansa', spouse: 'Tyrion', house: 'Stark' }, { name: 'Jon', spouse: null, house: 'Snow' } ]);
+    expect(getCharactersWithoutChildren(characters)).toStrictEqual([{ name: 'Sansa', spouse: 'Tyrion', house: 'Stark' }, { name: 'Jon', spouse: null, house: 'Snow' }]);
     expect(getCharactersWithoutChildren(characters).length).toStrictEqual(2);
   });
 });
@@ -319,6 +327,6 @@ xdescribe('Testing challenge 8', () => {
     expect(evenOddNumericValues(['a', 'b', 'c'])).toStrictEqual([]);
   });
   test('It should not accept strings that look like numbers', () => {
-    expect(evenOddNumericValues(['1', 2, 3, '4', 5,'6'])).toStrictEqual(['even', 'odd', 'odd']);
+    expect(evenOddNumericValues(['1', 2, 3, '4', 5, '6'])).toStrictEqual(['even', 'odd', 'odd']);
   });
 });
