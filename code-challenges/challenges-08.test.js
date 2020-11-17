@@ -58,7 +58,6 @@ const filterStringsWithVowels = (arr) => {
   let box = [];
   arr.filter(vowel => {
     if (vowel.match(regex)) {
-      console.log(vowel);
       box.push(vowel);
     }
   });
@@ -76,6 +75,22 @@ For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
 
 const notInFirstArray = (forbiddenValues, arr) => {
   // Solution code here...
+  let regex = /\w/;
+  let box = [];
+  arr.forEach((element, i) => {
+
+    if (element === forbiddenValues[i]) {
+      // if (forbiddenValues[i].match(regex) === true) {
+      //   return null;
+      // }
+      return null;
+    } else {
+      box.push(element);
+      console.log(box);
+      return box;
+    }
+  });
+  return box;
 };
 
 /* ------------------------------------------------------------------------------------------------
