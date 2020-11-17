@@ -141,14 +141,17 @@ This data could be sorted by name or price.
 
 const sortBy = (property, arr) => {
   // Solution code here...
-  console.log(property);
-  let box = [];
-  arr.sort(function (property) {
-    console.log(property);
-    box.push(property);
-  });
-  console.log(box);
-  return box;
+  arr.sort((a, b) => (a[property] > b[property]) ? 1 : -1);
+  //arr.sort((a, b) => (a.price > b.price) ? 1 : -1);
+
+  //arr.sort((a, b) => (a[property] > b[property]) ? 1 : (a.name === b.name) ? ((a.price > b.price) ? 1 : -1) : -1 );
+  // arr.sort(function (property) {
+  //   console.log(property);
+  //   box.push(property);
+  // });
+  // console.log(box);
+  // return box;
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
