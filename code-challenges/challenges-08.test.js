@@ -77,16 +77,18 @@ const notInFirstArray = (forbiddenValues, arr) => {
   // Solution code here...
   let regex = /\w/;
   let box = [];
+  console.log(forbiddenValues);
   arr.forEach((element, i) => {
-
-    if (element === forbiddenValues[i]) {
+console.log(element, forbiddenValues[i]);
+    if (forbiddenValues.includes(element)) {
       // if (forbiddenValues[i].match(regex) === true) {
       //   return null;
       // }
       return null;
     } else {
       box.push(element);
-      console.log(box);
+      
+      console.log(box, element);
       return box;
     }
   });
