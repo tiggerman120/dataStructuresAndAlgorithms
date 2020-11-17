@@ -50,8 +50,15 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['this
 
 const findHappiness = (arr) => {
   // Solution code here...
-  
-
+  let box = [];
+  let regex = /(:)\)/;
+  arr.forEach(string => {
+    if (string.includes(':)')) {
+      console.log(string);
+      box.push(string);
+    }
+  });
+  return box;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -63,18 +70,13 @@ For example, (123) 456-7890 returns 1234567890
 ------------------------------------------------------------------------------------------------ */
 
 const standardizePhoneNumbers = (arr) => {
-  console.log(arr);
   let box = [];
   let x = arr.forEach(firstParen => {
     let firstMod = firstParen.slice(1, 4);
-    console.log(firstMod);
     let secondMod = firstParen.slice(6, 9);
-    console.log(secondMod);
     let thirdMod = firstParen.slice(10, 14);
-    console.log(thirdMod);
     box.push(firstMod + secondMod + thirdMod);
   });
-  console.log(box);
   return box;
 };
 
@@ -314,6 +316,6 @@ xdescribe('Testing challenge 11', () => {
   });
 });
 
-function createSnippetWithJQuery(html){
+function createSnippetWithJQuery(html) {
   return cheerio.load(html);
 }

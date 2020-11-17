@@ -118,12 +118,10 @@ let biggerThanLuke = (arr) => {
   let wordBox = '';
   arr.forEach((name) => {
     if (name.mass > 77) {
-      console.log(name.name);
       wordBox = `${wordBox} - ${name.name}`;
     }
   });
   let modifiedBox = wordBox.substr(3);
-  console.log(wordBox.substr(2));
   return modifiedBox;
 };
 
@@ -144,9 +142,13 @@ This data could be sorted by name or price.
 const sortBy = (property, arr) => {
   // Solution code here...
   console.log(property);
-  arr.sort(function (a, b) {
-    return a - b;
+  let box = [];
+  arr.sort(function (property) {
+    console.log(property);
+    box.push(property);
   });
+  console.log(box);
+  return box;
 };
 
 /* ------------------------------------------------------------------------------------------------
