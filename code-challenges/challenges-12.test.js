@@ -40,7 +40,6 @@ const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
 
 const grandTotal = (stores) => {
   let totalSales = hoursOpen.map((hour, i) => {
-    // console.log(hour);
     return stores.reduce((accumulator, currentValue) => {
       accumulator += currentValue[i];
       return accumulator;
@@ -88,7 +87,16 @@ const errands = [
 ];
 
 const howManyTreats = (arr) => {
-  // Solution code here...
+  console.log(arr);
+  let quantity = null;
+  arr.reduce((accumulator, currentValue) => {
+    console.log(currentValue);
+    console.log(currentValue.items[1].quantity);
+    accumulator = currentValue.items[1].quantity;
+    quantity = accumulator;
+    return quantity;
+  });
+  return quantity;
 };
 
 /* ------------------------------------------------------------------------------------------------

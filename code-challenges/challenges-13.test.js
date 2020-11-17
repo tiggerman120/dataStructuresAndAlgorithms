@@ -20,7 +20,7 @@ const $ = createSnippetWithJQuery(`
 `);
 
 const fixTheTypo = () => {
-$.('#pear').replace('pear');
+  $('.pear').text('Pear');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -50,23 +50,34 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['this
 
 const findHappiness = (arr) => {
   // Solution code here...
+  let box = [];
+  let regex = /(:)\)/;
+  arr.forEach(string => {
+    if (string.includes(':)')) {
+      console.log(string);
+      box.push(string);
+    }
+  });
+  return box;
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 
 Write a function named standardizePhoneNumbers that takes in an array of phone number strings in (XXX) XXX-XXXX format and returns an array with the phone number strings in XXXXXXXXXX format.
-
 For example, (123) 456-7890 returns 1234567890
 ------------------------------------------------------------------------------------------------ */
 
 const standardizePhoneNumbers = (arr) => {
-  console.log(arr[0].length);
-  let x = arr.forEach(y => {
-    y.slice(10, 11);
+
+  let box = [];
+  let x = arr.forEach(firstParen => {
+    let firstMod = firstParen.slice(1, 4);
+    let secondMod = firstParen.slice(6, 9);
+    let thirdMod = firstParen.slice(10, 14);
+    box.push(firstMod + secondMod + thirdMod);
   });
-  console.log(x.length);
-  return x;
+  return box;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -305,6 +316,7 @@ xdescribe('Testing challenge 11', () => {
   });
 });
 
-function createSnippetWithJQuery(html){
+function createSnippetWithJQuery(html) {
+
   return cheerio.load(html);
 }

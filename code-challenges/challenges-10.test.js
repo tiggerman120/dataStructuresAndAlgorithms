@@ -68,7 +68,6 @@ For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 ------------------------------------------------------------------------------------------------ */
 
 const totalSum = (input) => {
-  console.log(input);
   let sums = input.reduce((accumulator, currentValue) => {//allowing you to interact with one inner array at a time step 1
     let x = currentValue.reduce((accumulator2, currentValue2) => {//we reduce a singular inner array into a single sum step 2
       accumulator2 += currentValue2;//this is the math logic (adding the values of each individual array) just logic
@@ -76,7 +75,6 @@ const totalSum = (input) => {
     }, 0);
     return accumulator + x;//adds the sum of the inner array to the accumulator (adding the 3 results together) step 3
   }, 0);
-  console.log(sums);
   return sums;//returns the result of sums variable step 5
 };
 
@@ -93,8 +91,36 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 ------------------------------------------------------------------------------------------------ */
 
 const divisibleByFiveTwoToThePower = (input) => {
-  // Solution code here...
+  return input.map(array => {//map over input array is currrentvalue
+    return array.filter((integer) => {//then filtering with the if statement
+      if (integer % 5 === 0 && typeof(integer) === 'number') {
+        // box.push(integer);
+        return true;//filter returns a boolean so true == valid number
+      }
+    }).map(element => {//after that it maps over numbers divis by 5
+      let x = Math.pow(2, element);//then raises 2 to the power of that element
+      return x;
+    });
+  }
+  );
 };
+// input.reduce((accumulator, currentValue) => {
+//   currentValue.forEach(integer => {
+//     if (integer % 5 === 0) {
+//       console.log(integer);
+//       accumulator =+ integer;
+//     }
+//   }, []);
+//   box.push(accumulator);
+//   console.log(box);
+// });
+//   let box2 = box.map(integer => {
+//     console.log(integer);
+//     Math.pow(integer, 2);
+//     console.log(box2);
+//     return box2;
+//   });
+// };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5 - Stetch Goal

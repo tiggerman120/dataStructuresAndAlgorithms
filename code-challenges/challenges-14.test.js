@@ -13,7 +13,12 @@ const createServer = () => {
   const app = express();
 
   // solution code goes here ...
-
+  app.get('/', (req, res) => {
+    res.send(200);
+  });
+  app.delete('/things/1', (req, res) => {
+    res.send(405);
+  });
   var server = app.listen(3000, function () {
     var port = server.address().port;
     console.log('Example app listening at port', port);
@@ -31,10 +36,9 @@ For example, ['apple', 'banana', 'MacGyver'] returns ['Apple', 'Banana', 'MacGyv
 
 const toTitleCase = (arr) => {
   let box = [];
-  arr.forEach (newArr => {
+  arr.forEach(newArr => {
     newArr = newArr.charAt(0).toUpperCase() + newArr.substr(1);
     box.push(newArr);
-    console.log(box);
   });
   return box;
 };
@@ -111,7 +115,14 @@ let starWarsData = [{
 }];
 
 let biggerThanLuke = (arr) => {
-  // Solution code here...
+  let wordBox = '';
+  arr.forEach((name) => {
+    if (name.mass > 77) {
+      wordBox = `${wordBox} - ${name.name}`;
+    }
+  });
+  let modifiedBox = wordBox.substr(3);
+  return modifiedBox;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -130,6 +141,17 @@ This data could be sorted by name or price.
 
 const sortBy = (property, arr) => {
   // Solution code here...
+  arr.sort((a, b) => (a[property] > b[property]) ? 1 : -1);
+  //arr.sort((a, b) => (a.price > b.price) ? 1 : -1);
+
+  //arr.sort((a, b) => (a[property] > b[property]) ? 1 : (a.name === b.name) ? ((a.price > b.price) ? 1 : -1) : -1 );
+  // arr.sort(function (property) {
+  //   console.log(property);
+  //   box.push(property);
+  // });
+  // console.log(box);
+  // return box;
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------

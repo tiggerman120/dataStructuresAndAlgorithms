@@ -83,14 +83,10 @@ For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 ------------------------------------------------------------------------------------------------ */
 
 const wordsToCharList = (arr) => {
-  //   var newArr = arr.substring(0, 1);
   var newArr2 = [];
   for (let i = 0; i < arr.length; i++) {
     newArr2.push(arr[i]);
   }
-  //   arr.forEach(letter => {
-  //     newArr2.push(letter);
-  //   });
   return newArr2;
 };
 
@@ -137,8 +133,15 @@ const gruffaloCrumble = {
 
 const listFoods = (recipe) => {
   let result = [];
-  // Solution code here...
-  return result;
+  recipe.ingredients.forEach(ingredient => {
+    let index = ingredient.indexOf(' ');//this targets the first space(spaces are the only common occurences in each string in the array)
+    let sliceUpToFirstSpace = ingredient.slice(index+1);//needs plus one so that it deletes the space and not just everything before it
+    let slicedIndex = sliceUpToFirstSpace.indexOf(' ');//this targets the second space
+    let sliceSecondSpace = sliceUpToFirstSpace.slice(slicedIndex+1);//this deletes up to and including the second space
+    result.push(sliceSecondSpace);//this pushes the result into an array
+    return sliceSecondSpace;//this returns the array out of the forEach
+  });
+  return result;//this returns the resulting array
 };
 
 /* ------------------------------------------------------------------------------------------------

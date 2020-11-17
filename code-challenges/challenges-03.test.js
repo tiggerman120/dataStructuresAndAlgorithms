@@ -56,9 +56,11 @@ with the strings sorted by their length, lowest to highest.
 ------------------------------------------------------------------------------------------------ */
 
 const sortByLength = (arr) => {
-  arr.sort(function(a,b){
-    return a - b;
+  arr.sort(function(a, b) {
+    return a.length - b.length;
   });
+  console.log(arr);
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
