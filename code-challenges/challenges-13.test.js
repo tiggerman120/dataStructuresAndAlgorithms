@@ -65,11 +65,11 @@ const findHappiness = (arr) => {
 CHALLENGE 4
 
 Write a function named standardizePhoneNumbers that takes in an array of phone number strings in (XXX) XXX-XXXX format and returns an array with the phone number strings in XXXXXXXXXX format.
-             012345678901234
 For example, (123) 456-7890 returns 1234567890
 ------------------------------------------------------------------------------------------------ */
 
 const standardizePhoneNumbers = (arr) => {
+
   let box = [];
   let x = arr.forEach(firstParen => {
     let firstMod = firstParen.slice(1, 4);
@@ -317,5 +317,6 @@ xdescribe('Testing challenge 11', () => {
 });
 
 function createSnippetWithJQuery(html) {
+
   return cheerio.load(html);
 }
