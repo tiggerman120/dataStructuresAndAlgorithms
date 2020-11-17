@@ -115,12 +115,16 @@ let starWarsData = [{
 }];
 
 let biggerThanLuke = (arr) => {
-  arr.forEach((name, i) => {
+  let wordBox = '';
+  arr.forEach((name) => {
     if (name.mass > 77) {
       console.log(name.name);
-      return `name.name;
+      wordBox = `${wordBox} - ${name.name}`;
     }
   });
+  let modifiedBox = wordBox.substr(3);
+  console.log(wordBox.substr(2));
+  return modifiedBox;
 };
 
 /* ------------------------------------------------------------------------------------------------
