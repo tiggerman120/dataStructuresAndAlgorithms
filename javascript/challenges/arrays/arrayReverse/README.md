@@ -10,7 +10,7 @@ The challenge is to accept an array as input and reverse it outputting a new arr
 
 ## solution
 
-![Whiteboard](aww-board.png)
+![Whiteboard](../../../../javascript/assets/array-reverse.png)
 
 ## Authors
 
