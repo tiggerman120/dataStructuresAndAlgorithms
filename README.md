@@ -42,9 +42,9 @@ The final structure should resemble this:
   │  └── challenge-02.test.js
   │  └── ...
   |
-  ├── [language]
-  │   └── [data-structure-name]
-  │       └── challenges
+  ├── [Javascript]
+  │   └── [ArrayReverse](javascript/challenges/arrays/arrayReverse/README.md)
+  │       └── arrayReverse
   │   └── [data-structure-name]
   │       └── challenges
   │   └── [data-structure-name]
