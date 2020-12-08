@@ -43,8 +43,8 @@ The final structure should resemble this:
   │  └── ...
   |
   ├── [Javascript]
-  │   └── [ArrayReverse](/javascript/arrays/arrayReverse/README.md)
-  │       └── challenges
+  │   └── [ArrayReverse](javascript/challenges/arrays/arrayReverse/README.md)
+  │       └── arrayReverse
   │   └── [data-structure-name]
   │       └── challenges
   │   └── [data-structure-name]
