@@ -1,18 +1,21 @@
-# Reverse an Array
+# code challenges
 
-## Challenge
+## Reverse an Array code challenge 01
+
+### Challenge
 
 The challenge is to accept an array as input and reverse it outputting a new array
 
-## Approach and Efficiency
+### Approach and Efficiency
 
 <!-- what approach did you take and why? What is the big O? -->
 
-## solution
+### solution
 
 ![Whiteboard](../../../../javascript/assets/array-reverse.png)
 
-## Authors
+### Authors
 
 Simon Panek
 Garrett Cintron
+

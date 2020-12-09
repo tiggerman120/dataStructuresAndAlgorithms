@@ -45,7 +45,7 @@ The final structure should resemble this:
   ├── [Javascript]
   │   └── [ArrayReverse](javascript/challenges/arrays/arrayReverse/README.md)
   │       └── arrayReverse
-  │   └── [data-structure-name]
+  │   └── [arrayShift](javascript/challenges/arrays/arrayShift/README.md)
   │       └── challenges
   │   └── [data-structure-name]
   │       └── challenges
