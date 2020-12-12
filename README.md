@@ -49,7 +49,7 @@ The final structure should resemble this:
   │       └── challenges
   │   └── [arrayBinarySearch](javascript/challenges/arrays/arrayBinarySearch/README.md)
   │       └── binary search
-      └── [data-structure-name]
+      └── [linked-list](javascript/challenges/linkedLists/README.md)
   │       └── challenges
   │   └── ...
   |
