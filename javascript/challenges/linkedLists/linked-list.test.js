@@ -62,3 +62,13 @@ describe('value does not exist in the linked list', () => {
     expect(list.head.value === 3).toBeFalsy();
   });
 });
+
+describe('returns a collection of values that exist in the linked list', () => {
+  it('will properly return a collection of all the values that exist in the linked list', () => {
+    const list = new LL();
+    list.insert(1);
+    list.insert(2);
+    list.insert(3);
+    expect(list.toString()).toEqual('3 -> 2 -> 1 -> NULL');
+  });
+});
