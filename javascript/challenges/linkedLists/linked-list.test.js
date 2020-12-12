@@ -52,5 +52,13 @@ describe('value exists in the linked list', () => {
     let next = list.head.next;
     expect(next.value === 2).toBeTruthy();
 
-  })
-})
+  });
+});
+
+describe('value does not exist in the linked list', () => {
+  it('will return false when searching for a value that does not exist in the linked list', () => {
+    const list = new LL();
+    list.insert(1);
+    expect(list.head.value === 3).toBeFalsy();
+  });
+});
