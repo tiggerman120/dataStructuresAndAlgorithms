@@ -14,7 +14,23 @@ i approached the challenge using TDD the big o is o(n)1 for all three for space 
 
 ![Whiteboard](../../../javascript/assets/class-06.jpg)
 
+
 ### Authors
 
 Garrett Cintron
 
+## code challenge 07
+
+### challenge
+
+Write a method for the Linked List class which takes a number, k, as a parameter. Return the node’s value that is k from the end of the linked list. 
+
+### approach and efficiency
+
+### solution
+
+![Whiteboard](../../../javascript/assets/class-07.jpg)
+
+### authors
+
+Garrett Cintron
