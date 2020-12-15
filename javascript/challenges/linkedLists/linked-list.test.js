@@ -38,7 +38,8 @@ describe('inserts multiple nodes into the linked list', () => {
     const list = new LL();
     list.insert('bananas');
     list.insert('apples');
-    expect(list.includes());
+    expect(list.includes('bananas', 'apples'));
+    //expect(list.includes('bananas))
   });
 });
 
@@ -70,5 +71,32 @@ describe('returns a collection of values that exist in the linked list', () => {
     list.insert(2);
     list.insert(3);
     expect(list.toString()).toEqual('3 -> 2 -> 1 -> NULL');
+  });
+});
+
+describe('inserts a node at the end of a linked list', () => {
+  it('inserts a node at the end of a linked list', () => {
+    const list = new LL();
+    list.insert(1);
+    list.append(2);
+    let tail = list.head.next;
+    expect(tail.value).toEqual(2);
+  });
+});
+
+describe('inserts a node at the beginning of a linked list', () => {
+  it('inserts a node at the beginning of a linked list', () => {
+    const list = new LL();
+    list.insertBefore(1, 2);
+    expect(list.head.value).toEqual(2);
+  });
+});
+
+describe('inserts a node after the first node in a linked list', () => {
+  it('inserts a node immediately following the head in a linked list', () => {
+    const list = new LL();
+    
+    list.insertAfter(1, 2);
+    expect(list.head.next.value).toEqual(2);
   });
 });
