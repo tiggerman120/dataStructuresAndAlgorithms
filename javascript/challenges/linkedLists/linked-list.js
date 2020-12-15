@@ -63,6 +63,22 @@ class LinkedList {
     console.log(newNode);
     return newNode;
   }
+
+  kthFromEnd(k) {
+    let node = new Node;
+    let current = this.head;
+    let length = 0;
+    while (this.head !== null) {
+      if (this.head === null) {
+        return;
+      }
+      length = length++;
+      node.next;
+      if (length === k) {
+        return node;
+      }
+    }
+  }
 }
 //assigning data to a variable is called capturing
 let LL = new LinkedList();

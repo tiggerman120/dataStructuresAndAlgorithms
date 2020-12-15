@@ -100,3 +100,14 @@ describe('inserts a node after the first node in a linked list', () => {
     expect(list.head.next.value).toEqual(2);
   });
 });
+
+describe('returns a node that is kth from the end of a linked list', () => {
+  it('returns a node that is kth from the end of a ll where k is a number', () => {
+    const list = new LL();
+    list.insert(1);
+    list.insert(2);
+    list.insert(3);
+    list.insert(4);
+    expect(list.kthFromEnd(2)).toEqual(3);
+  });
+});
