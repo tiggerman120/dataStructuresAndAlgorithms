@@ -6,8 +6,14 @@ const LinkedList = require('../linked-list');
 let list1 = new LinkedList;
 let list2 = new LinkedList;
 
-list1.insert(1).insert(2).insert(3).insert(4);
-list2.insert(5).insert(6).insert(7).insert(8);
+list1.insert(1);
+list1.insert(2);
+list1.insert(3);
+list1.insert(4);
+list2.insert(5);
+list2.insert(6);
+list2.insert(7);
+list2.insert(8);
 console.log(list1);
 
 function ziplist(list1, list2) {
@@ -19,3 +25,5 @@ function ziplist(list1, list2) {
   return list1;
 }
 ziplist(list1, list2);
+
+module.exports = ziplist;

@@ -6,5 +6,8 @@ Write a function called zipLists which takes two linked lists as arguments. Zip 
 
 ## approach and efficiency
 
+I attempted TDD but was having an unresolved weird bug with tests so I started writing the code.
+it should be O1 for space and time
+
 ## solution
 [whiteboard](../../../../javascript/assets/class-08.jpg)

@@ -15,6 +15,8 @@ I wrote the code and then the whiteboard for the code
 
 ### solution  
 
+[whiteboard](../../../javascript/assets/class-05.jpg)
+
 ##  code challenge 06
 
 ### Challenge

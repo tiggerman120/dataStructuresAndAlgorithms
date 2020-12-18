@@ -7,12 +7,12 @@ class LinkedList {
   }
   insert(value) {
     const node = new Node(value);
+    console.log(node);
     node.next = this.head;
     this.head = node;
   }
 
   includes(value) {
-    //if (this.head.value === value) { return true; } else { return false; }
     return this.head.value === value ? true : false;
   }
 
