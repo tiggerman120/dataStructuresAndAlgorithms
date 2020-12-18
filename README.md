@@ -51,6 +51,8 @@ The final structure should resemble this:
   │       └── binary search
       └── [linked-list](javascript/challenges/linkedLists/README.md)
   │       └── challenges
+      └── [ll-zip](javascript/challenges/linkedLists/llzip/README.md)
+  │       └── challenges
   │   └── ...
   |
   ├── node_modules
