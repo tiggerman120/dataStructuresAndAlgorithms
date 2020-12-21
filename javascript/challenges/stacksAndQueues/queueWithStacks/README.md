@@ -15,5 +15,5 @@ The Stack instances have only push, pop, and peek methods. You should use your o
 to be determined
 
 ## API
-
+[whiteboard](../../../../javascript/assets/class-11.jpg)
 to be determined
