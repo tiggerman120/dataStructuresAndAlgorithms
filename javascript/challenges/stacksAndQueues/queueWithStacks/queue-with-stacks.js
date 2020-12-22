@@ -9,13 +9,18 @@ class PseudoQueue {
   }
   enqueue(value) {
     //push into stack A
-    console.log(this.Stack1.push(value));
+    this.Stack1.push(value);
   }
 
   dequeue() {
     //take value out of stack A and push it into stack B
-    let value = Stack.pop();
-    Stack.push(value);
+    if (this.stack1.value) {
+      let poppedObj = this.stack1.pop();
+      this.stack2.push(poppedObj);
+    } else if (!this.stack1.value) {
+      return null;
+    }
+    return this.stack2.pop();
   }
 }
 
