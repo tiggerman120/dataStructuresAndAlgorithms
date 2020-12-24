@@ -36,3 +36,5 @@ function multiBracketValidation(string) {
     alert('error');
 }
 multiBracketValidation('[]{}()');
+
+module.exports = multiBracketValidation();
