@@ -53,6 +53,8 @@ The final structure should resemble this:
   │       └── challenges
       └── [ll-zip](javascript/challenges/linkedLists/llzip/README.md)
   │       └── challenges
+      └── [mbv](javascript/challenges/multiBracketValidation/README.md)
+  │       └── challenges
   │   └── ...
   |
   ├── node_modules
