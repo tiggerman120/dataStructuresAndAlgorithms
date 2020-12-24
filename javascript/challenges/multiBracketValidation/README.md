@@ -15,4 +15,5 @@ the efficiency should oN for time and o1 for space
 
 ## API
 
+edge cases: an empty string
 [whiteboard](../../assets/class-13.jpg)
