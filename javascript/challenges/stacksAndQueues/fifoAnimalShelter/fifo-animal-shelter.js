@@ -12,13 +12,13 @@ class AnimalShelter {
   enqueue(animal) {
     const cat = new Cat();
     const dog = new Dog();
-    animal.push(cat||dog);
+    animal.push(cat || dog);
   }
 
   dequeue(pref) {
-    if (pref !== this.dog || pref !== this.cat) {
+    if (pref !== Cat || pref !== Dog) {
       return null;
     }
-    return pref.pop(this.cat||this.dog);
+    return pref.shift(Cat || Dog);
   }
 }
