@@ -1,5 +1,10 @@
 # Binary Search Tree
 
+a binary tree each node can only have up to two children
+a binary search tree is ordered so that the small value is always to the left and the larger value to the right
+binary search tree is more efficient for searching and traversal
+binary search tree is integers or numbers only
+
 ## Challenge
 
 Create a Node class that has properties for the value stored in the node, the left child node, and the right child node.
@@ -18,4 +23,4 @@ Define a method named contains that accepts a value, and returns a boolean indic
 ## API
 
 
-[whiteboard]()
+[whiteboard class 16](../../assets/class-16.jpg)

@@ -1,102 +1,115 @@
 'use strict';
 
 class Node {
-  constructor() {
-    this.value = null;
-    this.left = null;
-    this.right = null;
+  constructor(value = 0, left = null, right = null) {
+    this.value = value;
+    this.left = left;
+    this.right = right;
   }
 }
 
 class BinaryTree {
   constructor() {
-
+    this.root = null;
   }
 
   preOrder() {
-    let newNode = new Node();
     let arr = [];
-    let current = newNode;
-    arr.push(current.value);
-    while (current.left !== null) {
-      arr.push(current.value);
-      current = current.left;
-    }
-    while (current.right !== null) {
-      arr.push(current.value);
-      current = current.right;
-    }
-    return arr;
+    let _walk = (node) => {
+      arr.push(node.value);
+      if (node.left) _walk(node.left);
+      if (node.right) _walk(node.right);
+    };
+    _walk(this.root);
   }
 
   inOrder() {
-    let newNode = new Node();
     let arr = [];
-    let current = newNode;
-    try {
-      while (current.left !== null) {
-        arr.push(current.value);
-        current = current.left;
-      }
-      arr.push(current.value);
-      while (current.right !== null) {
-        arr.push(current.value);
-        current = current.right;
-      }
-      return arr;
-    }
-    catch (e) {
-      console.error(e.message, e.name);
-    }
+    let _walk = (node) => {
+      if (node.left) _walk(node.left);
+      arr.push(node.value);
+      if (node.right) _walk(node.right);
+    };
+    _walk(this.root);
   }
 
   postOrder() {
-    let newNode = new Node();
     let arr = [];
-    let current = newNode;
-    try {
-      while (current.left !== null) {
-        arr.push(current.value);
-        current = current.left;
-      }
-      while (current.right !== null) {
-        arr.push(current.value);
+    let _walk = (node) => {
+      if (node.left) _walk(node.left);
+      if (node.right) _walk(node.right);
+      arr.push(node.value);
+    };
+    _walk(this.root);
+  }
+
+  findMaximumValue() {
+
+    let tally = 0;
+    let current = this.root;
+    while (current !== null) {
+      if (current.value >= tally) {
+        tally = current.value;
         current = current.right;
+      } else {
+        return tally;
       }
-      arr.push(current.value);
-      return arr;
     }
-    catch (e) {
-      console.error(e.message, e.name);
-    }
+    return tally;
   }
 }
 
-class BinarySearchTree {
-  constructor() {
+class BinarySearchTree extends BinaryTree {
+  super() {
     this.root = null;
   }
 
   add(value) {
     let newNode = new Node(value);
-    try {
-      if (this.root === null) {
-        this.root = newNode;
-      } else if (newNode.value < Node.value) {
-        while (Node.left !== null) {
-          if (Node.left === null) {
-            Node.left = newNode;
-          }
-        } while (Node.right !== null) {
-          if (Node.right === null) {
-            Node.right = newNode;
-          }
+
+    if (typeof value !== 'number') {
+      return null;
+    }
+
+    if (!this.root) {
+      this.root = new Node(value);
+      return;
+    }
+
+    let _insert = (node) => {
+      if (value < node.value) {
+        if (node.left === null) {
+          node.left = new Node(value);
+          return;
+        }
+        else if (node.left !== null) {
+          return _insert(node.left);
         }
       }
-    }
-    catch (e) {
-      console.error(e.message, e.name);
-    }
+      else if (value >= node.value) {
+        if (node.right === null) {
+          node.right = new Node(value);
+          return;
+        }
+        else if (node.right !== null) {
+          return _insert(node.right);
+        }
+      }
+    };
+    // if (this.root === null) {
+    //   this.root = newNode;
+    // } else if (newNode.value < Node.value) {
+    //   while (Node.left !== null) {
+    //     if (Node.left === null) {
+    //       Node.left = newNode;
+    //     }
+    //   } while (Node.right !== null) {
+    //     if (Node.right === null) {
+    //       Node.right = newNode;
+    //     }
+    //   }
+    _insert(this.root);
+
   }
 
   contains(value) {
@@ -113,4 +126,4 @@ class BinarySearchTree {
   }
 }
 
-module.exports = {BinaryTree, BinarySearchTree, Node}
+module.exports = { BinaryTree, BinarySearchTree, Node };
