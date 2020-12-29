@@ -18,9 +18,7 @@ Define a method named contains that accepts a value, and returns a boolean indic
 
 ## Approach & Efficiency
 
-
-
 ## API
 
-
 [whiteboard class 16](../../assets/class-16.jpg)
+[whiteboard class 17](../../assets/class-17.jpg)

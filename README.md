@@ -55,6 +55,8 @@ The final structure should resemble this:
   │       └── challenges
       └── [mbv](javascript/challenges/multiBracketValidation/README.md)
   │       └── challenges
+      └── [fmv](javascript/challenges/tree/README.md)
+  │       └── findMaximumValue
   │   └── ...
   |
   ├── node_modules
