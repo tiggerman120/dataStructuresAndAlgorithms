@@ -8,6 +8,6 @@ Once you are done with your article, code a working, tested implementation of Me
 
 ## Approach and Efficiency
 
-
+n()
 
 [blog post](blog.md)

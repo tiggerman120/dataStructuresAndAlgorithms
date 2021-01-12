@@ -2,33 +2,34 @@
 
 
 function mergeSort(arr) {
-  let n = arr.length;
-  if (n > 1) {
-    let mid = Math.floor(n / 2);
-    console.log(mid);
-    let left = arr.slice(0, mid + 1);
-    let right = arr.slice(mid, n - 1);
-    mergeSort(left);
-    mergeSort(right);
-    merge(left, right, arr);
+  if (arr.length <= 1) {
+    return arr;
   }
-  function merge(left, right, arr) {
-    let i = 0;
-    let j = 0;
-    let k = 0;
+  const mid = Math.floor(arr.length / 2);
+  const left = arr.slice(0, mid);
+  const right = arr.slice(mid);
+  return merge(mergeSort(left), mergeSort(right));
 
-    while (i < left.length && right.length) {
-      if (left[i] <= right[j]) {
-        arr[k] = left[i];
-        i = i + 1;
-      } else {
-        arr[k] = right[j];
-        j = j + 1;
-      }
-      k = k + 1;
+}
+
+function merge(left, right) {
+  let resArr = [];
+  let leftIndex = 0;
+  let rightIndex = 0;
+
+  while (leftIndex < left.length && rightIndex < right.length) {
+    if (left[leftIndex] < right[rightIndex]) {
+      resArr.push(left[leftIndex]);
+      leftIndex++;
+    } else {
+      resArr.push(right[rightIndex]);
+      rightIndex++;
     }
   }
-  return arr;
+  return resArr
+    .concat(left.slice(leftIndex))
+    .concat(right.slice(rightIndex));
+
 }
 
 module.exports = mergeSort;
