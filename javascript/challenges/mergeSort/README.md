@@ -11,3 +11,5 @@ Once you are done with your article, code a working, tested implementation of Me
 n()
 
 [blog post](blog.md)
+
+[assisting site](https://medium.com/javascript-in-plain-english/javascript-merge-sort-3205891ac060)
