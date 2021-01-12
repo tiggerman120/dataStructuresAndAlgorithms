@@ -2,7 +2,7 @@
 
 
 function insertionSort(arr) {
-  arr = [8, 4, 23, 42, 16, 15];
+  //arr = [8, 4, 23, 42, 16, 15];
   for (let i = 1; i < arr.length; i++) {
     let j = i - 1;
     let temp = arr[i];
