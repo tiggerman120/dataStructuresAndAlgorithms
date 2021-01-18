@@ -43,6 +43,7 @@ class HashTable {
   }
 
   set(key, value) {
+    //create key value pair
     const hash = this.hash(key);
     const entry = { [key]: value };
     if (!this.map[hash]) { this.map[hash] = new LinkedList(); }
