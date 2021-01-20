@@ -58,23 +58,23 @@ class BinaryTree {
     return tally;
   }
 
-  breadthFirst(BinaryTree) {
-  let array = [];
-  let final
-  let current = this.root;
-  let level = 0;
-  let valueRead = false
-  if (!current) {
-    throw new error('the tree is empty');
-  } else {
-    while (current !== null)
-    array.push(current);
-    current.valueRead = true;
-    if (current.valueRead =)
-  }
+//   breadthFirst(BinaryTree) {
+//   let array = [];
+//   let final
+//   let current = this.root;
+//   let level = 0;
+//   let valueRead = false
+//   if (!current) {
+//     throw new error('the tree is empty');
+//   } else {
+//     while (current !== null)
+//     array.push(current);
+//     current.valueRead = true;
+//     if (current.valueRead =)
+//   }
   
+// }
 }
-
 class BinarySearchTree extends BinaryTree {
   super() {
     this.root = null;
@@ -83,9 +83,9 @@ class BinarySearchTree extends BinaryTree {
   add(value) {
     let newNode = new Node(value);
 
-    if (typeof value !== 'number') {
-      return null;
-    }
+    // if (typeof value !== 'number') {
+    //   return null;
+    // }
 
     if (!this.root) {
       this.root = new Node(value);
