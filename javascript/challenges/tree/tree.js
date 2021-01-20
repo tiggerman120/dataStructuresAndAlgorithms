@@ -83,9 +83,9 @@ class BinarySearchTree extends BinaryTree {
   add(value) {
     let newNode = new Node(value);
 
-    if (typeof value !== 'number') {
-      return null;
-    }
+    // if (typeof value !== 'number') {
+    //   return null;
+    // }
 
     if (!this.root) {
       this.root = new Node(value);

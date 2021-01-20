@@ -7,4 +7,6 @@ Without utilizing any of the built-in library methods available to your language
 
 ## approach and efficiency
 
-[whiteboard]()
+code not complete no efficiency or approach
+
+[whiteboard](../../assets/class-32.jpg)
