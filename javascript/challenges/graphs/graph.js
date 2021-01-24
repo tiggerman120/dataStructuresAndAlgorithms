@@ -28,10 +28,9 @@ class Graph {
   }
 
   addDirectedEdge(startVertex, endVertex, weight) {
-    console.log(this.adjacencyList);
-    if (this.adjacencyList.has(startVertex) || this.adjacencyList.has(endVertex) === false) {
-      throw new Error('error: need a start or end vertex', console.log(startVertex, endVertex, weight));
-    }
+    // if (this.adjacencyList.has(startVertex) || this.adjacencyList.has(endVertex) === false) {
+    //   throw new Error('error: need a start or end vertex', console.log(startVertex, endVertex, weight));
+    // }
 
     //get startVertex from the Map (all of verticies)
     //push a new Edge that will connect the start to the end into the array along with the weight
@@ -40,16 +39,14 @@ class Graph {
   }
 
   getNeighbors(vertex) {
-    if (!this.adjacencyList.has(vertex)) {
-      throw new Error('error - invalid vertex', vertex);
-    }
-    console.log(this.adjacencyList);
+    // if (!this.adjacencyList.has(vertex)) {
+    //   throw new Error('error - invalid vertex', console.log(vertex));
+    // }
     return this.adjacencyList.get(vertex);
   }
 
   bfs(startNode) {
     const queue = [];
-
     //a set is an object that will only store unique keys
     const visitedNodes = new Set();
     queue.push(startNode);
@@ -82,12 +79,9 @@ class Graph {
   dfs(startNode) {
     //add node to set
     const visitedNodes = new Set();
-
     const traverseNeighbors = (node) => {
-
       visitedNodes.add(node);
-      //logic
-      const neighbors = this.getNeighbors();
+      const neighbors = this.getNeighbors(node);
       for (const edge of neighbors) {
         if (!visitedNodes.has(edge.vertex)) {
           traverseNeighbors(edge.vertex);
@@ -95,6 +89,7 @@ class Graph {
       }
     };
     traverseNeighbors(startNode);
+    console.log(visitedNodes);
     return visitedNodes;
   }
 
@@ -128,28 +123,12 @@ class Graph {
         parentPath.set(neighborNode, currentNode);
       }
     }
+    console.log(parentPath);
+    return parentPath;
   }
-  size(vertex) {
-    // if (!vertex) {
-    //   console.error('no starting node');
-    // }
-    let tally = 0;
-    const visitedNodes = new Set();
-
-    const traverseNeighbors = (node) => {
-
-      visitedNodes.add(node);
-      //logic
-      const neighbors = this.getNeighbors();
-      for (const edge of neighbors) {
-        if (!visitedNodes.has(edge.vertex)) {
-          traverseNeighbors(edge.vertex);
-          tally++;
-        }
-      }
-    };
-    traverseNeighbors(vertex);
-    return tally;
+  size() {
+    console.log(this.adjacencyList.size);
+    return this.adjacencyList.size;
   }
 }
 
