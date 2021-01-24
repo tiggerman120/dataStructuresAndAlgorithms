@@ -13,13 +13,13 @@ class Stack {
   }
 
   pop() {
-    if (this.top === null) {
+    if (this.top === null) {//if the top node is empty
       throw new Error('empty stack');
     } else {
-      let temp = this.top;
-      this.top = this.top.next;
-      temp.next = null;
-      return temp.value;
+      let temp = this.top;//assign a variable to the top node
+      this.top = this.top.next;//assign the top to the next node
+      temp.next = null;//remove any existing references to the traversed node
+      return temp.value;//return the value
     }
   }
 
@@ -41,17 +41,15 @@ class Queue {
     this.front = null;
   }
   enqueue(value) {
-    let node = new Node(value);
-    if (this.front === null) {
-      return this.front = node;
+    let node = new Node(value);//create a new node
+    if (this.front === null) {//if there is no front node
+      return this.front = node;//assign the node to the front
     }
-    let currentNode = this.front;
-    while (currentNode.next) {
-      currentNode = currentNode.next;
+    let currentNode = this.front;//capture the front
+    while (currentNode.next) {//while there is a next node
+      currentNode = currentNode.next;//traverse to the next node
     }
-    currentNode.next = node;
-    //node.next = this.front;
-    //this.front = node;
+    currentNode.next = node;//when you're at the end assign the node to the next position(the end)
 
   }
 
@@ -59,10 +57,10 @@ class Queue {
     if (this.front === null) {
       throw new Error('empty queue');
     }
-    let temp = this.front;
-    this.front = this.front.next;
-    temp.next = null;
-    return temp.value;
+    let temp = this.front;//capture the front
+    this.front = this.front.next;//traverse to the next node
+    temp.next = null;//remove any existing references to the traversed node
+    return temp.value;//return the front value
   }
 
   peek() {
