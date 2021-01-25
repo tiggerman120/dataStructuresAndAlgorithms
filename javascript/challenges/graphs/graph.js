@@ -122,13 +122,9 @@ class Graph {
           } else {
             console.log(`hitting else statement`);
             //otherwise I haven't been there. I need to add it to the set
+            visitedNodes[visitedNodes.length] = neighborNode;
             //visitedNodes.add(neighborNode);
-            if (visitedNodes[i] === neighborNode) {
-              continue;
-            } else {
-              visitedNodes[visitedNodes.length] = neighborNode;
-              console.log(visitedNodes);
-            }
+            
           }
         }
         //put it into the queue
