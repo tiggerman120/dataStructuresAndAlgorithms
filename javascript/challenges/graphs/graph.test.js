@@ -24,7 +24,6 @@ describe('graphs', () => {
     graph.addVertex(node3);
     graph.addVertex(node4);
     graph.addDirectedEdge(node1, node2, 1);
-    console.log(graph.adjacencyList);
     expect(graph.size()).toEqual(graph.adjacencyList.size);
   });
 
@@ -52,11 +51,9 @@ describe('graphs', () => {
     set.add(vertex1);
     set.add(vertex2);
     set.add(vertex3);
-    console.log(set);
     graph.addDirectedEdge(vertex1, vertex2, 1);
     graph.addDirectedEdge(vertex2, vertex3, 2);
     let results = graph.dfs(vertex1);
-    console.log(results);
     expect(graph.dfs(vertex1)).toEqual(set);
   });
 
@@ -80,5 +77,22 @@ describe('graphs', () => {
     graph.addDirectedEdge(vertex1, vertex2, 1);
     graph.addDirectedEdge(vertex2, vertex3, 2);
     expect(graph.pathTo(vertex1, vertex3)).toEqual(7);
+  });
+
+  it(' does a bfs with no methods', () => {
+    let graph = new Graph();
+    let vertex1 = new Vertex(1);
+    let vertex2 = new Vertex(2);
+    let vertex3 = new Vertex(3);
+    let set = new Set();
+    graph.addVertex(vertex1);
+    graph.addVertex(vertex2);
+    graph.addVertex(vertex3);
+    set.add(vertex1);
+    set.add(vertex2);
+    set.add(vertex3);
+    graph.addDirectedEdge(vertex1, vertex2, 1);
+    graph.addDirectedEdge(vertex2, vertex3, 2);
+    expect(graph.bfsWithoutMethods(vertex1)).toEqual(7);
   });
 });

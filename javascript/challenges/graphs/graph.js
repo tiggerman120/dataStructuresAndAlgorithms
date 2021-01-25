@@ -76,6 +76,76 @@ class Graph {
     return visitedNodes;
   }
 
+
+  bfsWithoutMethods(startNode) {
+    const queue = [];
+    //a set is an object that will only store unique keys
+    const visitedNodes = [];
+    //queue.push(startNode);
+    if (!queue[0]) {
+      queue[queue.length] = startNode;
+    } else {
+      queue[queue.length + 1] = startNode;
+    }
+    console.log(queue);
+    //visitedNodes.add(startNode);
+    if (!visitedNodes[0]) {
+      visitedNodes[visitedNodes.length] = startNode;
+    } else visitedNodes[visitedNodes.length + 1] = startNode;
+    console.log(visitedNodes);
+
+
+    while (queue.length) {
+      //const currentNode = queue.shift();
+      let currentNode;
+      for (let i = 0; i < queue.length; i++) {
+        currentNode = queue[i];
+        queue[0] = queue[1];
+        --queue.length;
+      }
+      //capture the value of first item in the array
+      //remove the value from the queue
+      //move every other item the array one position forward with a loop
+
+      //get all the neighbors of the node that i took off the queue
+      const neighbors = this.getNeighbors(currentNode);
+      for (const neighbor of neighbors) {
+        const neighborNode = neighbor.vertex;
+
+        //if the set has the node that i'm looking for
+        //if (visitedNodes.has(neighborNode)) {
+        for (let i = 0; i < visitedNodes.length; i++) {
+          if (visitedNodes[i] === neighborNode) {
+            console.log(`hitting if statement`);
+            //stop looking at this node and go to the next one
+            break;
+          } else {
+            console.log(`hitting else statement`);
+            //otherwise I haven't been there. I need to add it to the set
+            //visitedNodes.add(neighborNode);
+            if (visitedNodes[i] === neighborNode) {
+              continue;
+            } else {
+              visitedNodes[visitedNodes.length] = neighborNode;
+              console.log(visitedNodes);
+            }
+          }
+        }
+        //put it into the queue
+        //queue.push(neighborNode);
+        if (!queue[0]) {
+          queue[queue.length] = neighborNode;
+        } else {
+          queue[queue.length + 1] = neighborNode;
+        }
+      }
+
+    }
+    //return the Set so I have a list of nodes of where I've been
+    console.log(visitedNodes);
+    return visitedNodes;
+  }
+
   dfs(startNode) {
     //add node to set
     const visitedNodes = new Set();
@@ -89,7 +159,6 @@ class Graph {
       }
     };
     traverseNeighbors(startNode);
-    console.log(visitedNodes);
     return visitedNodes;
   }
 
@@ -127,7 +196,6 @@ class Graph {
     return parentPath;
   }
   size() {
-    console.log(this.adjacencyList.size);
     return this.adjacencyList.size;
   }
 }

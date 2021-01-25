@@ -59,7 +59,7 @@ class Queue {
     }
     let temp = this.front;//capture the front
     this.front = this.front.next;//traverse to the next node
-    temp.next = null;//remove any existing references to the traversed node
+    temp.next = null;//remove any existing references to the front node
     return temp.value;//return the front value
   }
 
