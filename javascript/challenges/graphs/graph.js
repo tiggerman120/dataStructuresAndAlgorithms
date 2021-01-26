@@ -76,6 +76,7 @@ class Graph {
     return visitedNodes;
   }
 
+  
 
   bfsWithoutMethods(startNode) {
     const queue = [];

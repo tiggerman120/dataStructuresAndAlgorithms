@@ -1,6 +1,7 @@
 'use strict';
 
 const { Vertex, Edge, Graph } = require('./graph');
+const getEdge = require('./getEdge');
 
 describe('graphs', () => {
   it('can successfully add a node', () => {
@@ -94,5 +95,19 @@ describe('graphs', () => {
     graph.addDirectedEdge(vertex1, vertex2, 1);
     graph.addDirectedEdge(vertex2, vertex3, 2);
     expect(graph.bfsWithoutMethods(vertex1)).toEqual(7);
+  });
+
+  it('returns true and the total cost of a flight from point a to point b', () => {
+    let graph = new Graph();
+    let array = ['pandora', 'arendelle'];
+    let vertex1 = new Vertex('pandora');
+    let vertex2 = new Vertex('arendelle');
+    let vertex3 = new Vertex('monstropolis');
+    graph.addVertex(vertex1);
+    graph.addVertex(vertex2);
+    graph.addVertex(vertex3);
+    graph.addDirectedEdge(vertex1, vertex2, 150);
+    graph.addDirectedEdge(vertex2, vertex3, 42);
+    expect(getEdge(graph, array)).toEqual(7);
   });
 });
