@@ -110,4 +110,6 @@ describe('graphs', () => {
     graph.addDirectedEdge(vertex2, vertex3, 42);
     expect(getEdge(graph, array)).toEqual(7);
   });
+
+  it('returns a pre order traversal')
 });
