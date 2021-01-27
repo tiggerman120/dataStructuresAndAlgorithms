@@ -1,18 +1,18 @@
 'use strict';
 
 const treeIntersection = require('./tree-intersection');
-const { BinaryTree, BinarySearchTree } = require('../tree/tree');
+const HashTable = require('../hashtable/hashtable');
 
 describe('tree intersection', () => {
   it('returns something', () => {
-    let tree1 = new BinarySearchTree();
-    let tree2 = new BinarySearchTree();
-    tree1.add('pizza');
-    tree1.add('chicken');
-    tree1.add('taco');
-    tree2.add('cat');
-    tree2.add('chicken');
-    tree2.add('horse');
+    let tree1 = new HashTable();
+    let tree2 = new HashTable();
+    tree1.set('pizza');
+    tree1.set('chicken');
+    tree1.set('taco');
+    tree2.set('cat');
+    tree2.set('chicken');
+    tree2.set('horse');
 
     expect(treeIntersection(tree1, tree2)).toEqual({key: 1});
   });
