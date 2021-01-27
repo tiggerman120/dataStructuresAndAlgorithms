@@ -2,6 +2,7 @@
 
 const { Vertex, Edge, Graph } = require('./graph');
 const getEdge = require('./getEdge');
+const dfs = require('./dfs');
 
 describe('graphs', () => {
   it('can successfully add a node', () => {
@@ -111,5 +112,16 @@ describe('graphs', () => {
     expect(getEdge(graph, array)).toEqual(7);
   });
 
-  it('returns a pre order traversal')
+  it('returns a pre order traversal', () => {
+    let graph = new Graph();
+    let vertex1 = new Vertex('pandora');
+    let vertex2 = new Vertex('arendelle');
+    let vertex3 = new Vertex('monstropolis');
+    graph.addVertex(vertex1);
+    graph.addVertex(vertex2);
+    graph.addVertex(vertex3);
+    graph.addDirectedEdge(vertex1, vertex2, 150);
+    graph.addDirectedEdge(vertex2, vertex3, 42);
+    expect(dfs(vertex1)).toEqual(7);
+  })
 });
